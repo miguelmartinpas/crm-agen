@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  typescript-apollo-express-graphql-api:
+    container_name: typescript-apollo-express-graphql-api
+    hostname: typescript-apollo-express-graphql-api
+    build:
+      context: .
+      dockerfile: ./typescript-apollo-express-graphql-api/Dockerfile
+    ports:
+      - 4000:4000
+    volumes:
+      - ./typescript-apollo-express-graphql-api:/server/app
+      - ./typescript-apollo-express-graphql-api/node_modules:/server/app/node_modules
