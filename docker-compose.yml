@@ -9,5 +9,5 @@ services:
     ports:
       - 4000:4000
     volumes:
-      - ./typescript-apollo-express-graphql-api:/server/app
+      - ./typescript-apollo-express-graphql-api:/server/app:rw
       - /server/app/node_modules
