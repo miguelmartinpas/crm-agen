@@ -6,13 +6,13 @@ WORKDIR /server/app
 ENV PATH /server/app/node_modules/.bin:$PATH
 
 # install server dependencies
-RUN ls -la
-# COPY ./package.json .
-# COPY ./package-lock.json .
-RUN npm install --silent
+COPY ./typescript-apollo-express-graphql-api/package.json /server/app
+COPY ./typescript-apollo-express-graphql-api/package-lock.json /server/app
+RUN npm install
+# --silent
 
 # add server
-COPY . .
+COPY ./typescript-apollo-express-graphql-api /server/app
 
 # start server
 CMD ["npm", "run", "start:dev"]
