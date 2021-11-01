@@ -16,9 +16,18 @@ export const ServiceTypeDefs = gql`
     technology: String
   }
 
+  type Tag {
+    id: ID
+    tag: String
+  }
+
+  input CourseInput {
+    tag: String
+  }
+
   type Query {
     getAllUsers: [User]
-    getCourse : Course
+    getCourse(input: CourseInput!) : Course
     getCourses : [Course]
     getTechnologies : [Technology]
   }

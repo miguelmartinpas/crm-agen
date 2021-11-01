@@ -11,3 +11,19 @@ services:
     volumes:
       - ./typescript-apollo-express-graphql-api:/server/app:rw
       - /server/app/node_modules
+
+  mongo-db:
+    image: mongo
+    container_name: mongo-db
+    hostname: mongo-db
+    restart: always
+    environment:
+      - MONGO_INITDB_DATABASE=admin
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=secret00
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo/mongodata:/data/db
+      - ./mongo/mongo-entrypoint:/docker-entrypoint-initdb.d:ro
+    command: mongod

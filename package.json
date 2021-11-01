@@ -1,0 +1,10 @@
+{
+  "name": "crm-clients",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "clean:all": "npm run clean:server && npm run clean:mongo",
+    "clean:server": "cd typescript-apollo-express-graphql-api && rm -rf node_modules/ && cd ..",
+    "clean:mongo": "cd mongo && rm -rf mongodata/ && mkdir mongodata && touch ./mongodata/.gitignore & cd .."
+  }
+}

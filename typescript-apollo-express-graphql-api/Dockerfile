@@ -14,5 +14,9 @@ RUN npm install --loglevel verbose
 # add server
 COPY ./typescript-apollo-express-graphql-api /server/app
 
+
+RUN mkdir -p /server/app/node_modules
+RUN cp -r /server/node_modules/* /server/app/node_modules/
+
 # start server
 CMD ["npm", "run", "start:dev"]
