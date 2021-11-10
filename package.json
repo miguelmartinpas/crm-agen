@@ -5,7 +5,8 @@
   "scripts": {
     "clean:all": "npm run clean:server && npm run clean:mongo",
     "clean:server": "cd typescript-apollo-express-graphql-api && rm -rf node_modules/ && mkdir node_modules && touch ./node_modules/.gitignore && cd .. && npm run restore:server:gitignore",
-    "clean:mongo": "cd mongo && rm -rf mongodata/ && mkdir mongodata && touch ./mongodata/.gitignore & cd ..",
-    "restore:server:gitignore": "echo '# Ignore everything in this directory\n*\n# Except this file\n!.gitignore' > ./typescript-apollo-express-graphql-api/node_modules/.gitignore"
+    "clean:mongo": "cd mongo && rm -rf mongodata/ && mkdir mongodata && touch ./mongodata/.gitignore && cd .. && npm run restore:mongo:gitignore",
+    "restore:server:gitignore": "echo '# Ignore everything in this directory\n*\n# Except this file\n!.gitignore' > ./typescript-apollo-express-graphql-api/node_modules/.gitignore",
+    "restore:mongo:gitignore": "echo '# Ignore everything in this directory\n*\n# Except this file\n!.gitignore' > ./mongo/mongodata/.gitignore"
   }
 }
