@@ -10,13 +10,12 @@ services:
       - 4000:4000
     volumes:
       - ./typescript-apollo-express-graphql-api:/server/app:rw
-      - /server/app/node_modules
+      - typescript-apollo-express-graphql-api-vol:/server/app/node_modules
 
   mongo-db:
     image: mongo
     container_name: mongo-db
     hostname: mongo-db
-    restart: always
     environment:
       - MONGO_INITDB_DATABASE=admin
       - MONGO_INITDB_ROOT_USERNAME=admin
@@ -27,3 +26,6 @@ services:
       - ./mongo/mongodata:/data/db
       - ./mongo/mongo-entrypoint:/docker-entrypoint-initdb.d:ro
     command: mongod
+
+volumes:
+  typescript-apollo-express-graphql-api-vol:
