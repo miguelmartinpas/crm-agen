@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "clean:all": "npm run clean:server && npm run clean:mongo",
-    "clean:server": "cd typescript-apollo-express-graphql-api && rm -rf node_modules/ && mkdir node_modules && touch ./node_modules/.gitignore && cd ..",
+    "clean:server": "cd typescript-apollo-express-graphql-api && rm !(.gitignore) -rf node_modules/ && mkdir node_modules && touch ./node_modules/.gitignore && cd ..",
     "clean:mongo": "cd mongo && rm -rf mongodata/ && mkdir mongodata && touch ./mongodata/.gitignore & cd .."
   }
 }
